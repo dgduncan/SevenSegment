@@ -41,3 +41,6 @@ segmentDisplay.displayNumber(2);
 segmentDisplay.testDisplay();
 ```
 
+**Example Wiring**
+![Alt text](http://s28.postimg.org/3ykbyq331/IMG_0550.jpg "Example Wiring")
+
