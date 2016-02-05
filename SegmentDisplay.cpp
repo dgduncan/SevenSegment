@@ -10,32 +10,32 @@ Data: 2/4/2016
 
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10)
 {
-	  pinMode(pin1, OUTPUT);
-	  pinMode(pin2, OUTPUT);
-	  pinMode(pin4, OUTPUT);
-	  pinMode(pin5, OUTPUT);
-	  pinMode(pin6, OUTPUT);
-	  pinMode(pin7, OUTPUT);
-	  pinMode(pin9, OUTPUT);
-      pinMode(pin10, OUTPUT);
+	pinMode(pin1, OUTPUT);
+	pinMode(pin2, OUTPUT);
+	pinMode(pin4, OUTPUT);
+	pinMode(pin5, OUTPUT);
+	pinMode(pin6, OUTPUT);
+	pinMode(pin7, OUTPUT);
+	pinMode(pin9, OUTPUT);
+    pinMode(pin10, OUTPUT);
 	  
-      digitalWrite(pin1, HIGH);
-      digitalWrite(pin2, HIGH);
-      digitalWrite(pin4, HIGH);
-      digitalWrite(pin5, HIGH);
-      digitalWrite(pin6, HIGH);
-      digitalWrite(pin7, HIGH);
-      digitalWrite(pin9, HIGH);
-      digitalWrite(pin10, HIGH);
+    digitalWrite(pin1, HIGH);
+    digitalWrite(pin2, HIGH);
+    digitalWrite(pin4, HIGH);
+    digitalWrite(pin5, HIGH);
+    digitalWrite(pin6, HIGH);
+    digitalWrite(pin7, HIGH);
+    digitalWrite(pin9, HIGH);
+    digitalWrite(pin10, HIGH);
   
-      _pin1 = pin1;
-      _pin2 = pin2;
-      _pin4 = pin4;
-      _pin5 = pin5;
-      _pin6 = pin6;
-      _pin7 = pin7;
-      _pin9 = pin9;
-      _pin10 = pin10;
+    _pin1 = pin1;
+    _pin2 = pin2;
+    _pin4 = pin4;
+    _pin5 = pin5;
+    _pin6 = pin6;
+    _pin7 = pin7;
+    _pin9 = pin9;
+    _pin10 = pin10;
   
 }
 
