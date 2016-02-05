@@ -10,13 +10,13 @@ Data: 2/4/2016
 
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10)
 {
-	pinMode(pin1, OUTPUT);
-	pinMode(pin2, OUTPUT);
-	pinMode(pin4, OUTPUT);
-	pinMode(pin5, OUTPUT);
-	pinMode(pin6, OUTPUT);
-	pinMode(pin7, OUTPUT);
-	pinMode(pin9, OUTPUT);
+    pinMode(pin1, OUTPUT);
+    pinMode(pin2, OUTPUT);
+    pinMode(pin4, OUTPUT);
+    pinMode(pin5, OUTPUT);
+    pinMode(pin6, OUTPUT);
+    pinMode(pin7, OUTPUT);
+    pinMode(pin9, OUTPUT);
     pinMode(pin10, OUTPUT);
 	  
     digitalWrite(pin1, HIGH);
