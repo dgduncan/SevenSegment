@@ -10,7 +10,7 @@ Data: 2/4/2016
 
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10)
 {
-	pinMode(pin1, OUTPUT);
+    pinMode(pin1, OUTPUT);
     pinMode(pin2, OUTPUT);
     pinMode(pin4, OUTPUT);
     pinMode(pin5, OUTPUT);
@@ -161,20 +161,20 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
 	
-	if(number == 10)
-	{
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, HIGH);
-        digitalWrite(_pin4, LOW);
-        digitalWrite(_pin5, HIGH);
-        digitalWrite(_pin6, LOW);
-        digitalWrite(_pin7, LOW);
-        digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, LOW);	
-	}
+    if(number == 10)
+    {
+      digitalWrite(_pin1, LOW);
+      digitalWrite(_pin2, HIGH);
+      digitalWrite(_pin4, LOW);
+      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin6, LOW);
+      digitalWrite(_pin7, LOW);
+      digitalWrite(_pin9, LOW);
+      digitalWrite(_pin10, LOW);	
+    }
 	
-	if(number == 11)
-	{
+    if(number == 11)
+    {
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, LOW);
