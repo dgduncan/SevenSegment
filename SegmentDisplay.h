@@ -11,7 +11,7 @@ class SegmentDisplay
 {
     public:
       SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10);
-      void displayNumber(int numberToDisplay);
+      void displayHex(int numberToDisplay);
       void testDisplay();
 
     private:
