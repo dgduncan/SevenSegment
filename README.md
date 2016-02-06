@@ -30,10 +30,10 @@ SegmentDisplay segmentDisplay(2, 3, 4, 5, 6, 7, 8, 9);
 **How to display a hex letter**
 ```C
 /*Display any given number 0 to 15
- *2 in this example
+ *2 and C in this example
  */
 segmentDisplay.displayHex(2);
-segmentDisplay.display(12);
+segmentDisplay.displayHex(12);
 ```
 
 **How to test the display and test display wiring**
