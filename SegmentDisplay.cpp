@@ -1,8 +1,9 @@
 /*
-Library written for use with Common-Anode 7-Segment Display
+ Library written for use with Common-Anode 7-Segment Display. For more information on how to use this library,
+ please refer to the github README.
 
-Written by: Derek Duncan
-Data: 2/4/2016
+ Written by: Derek Duncan
+ Data: 2/4/2016
 */
 
 #include "Arduino.h"
@@ -18,7 +19,8 @@ SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6,
     pinMode(pin7, OUTPUT);
     pinMode(pin9, OUTPUT);
     pinMode(pin10, OUTPUT);
-	  
+    
+	/*Make sure all of the LEDs are turned off for common anode*/
     digitalWrite(pin1, HIGH);
     digitalWrite(pin2, HIGH);
     digitalWrite(pin4, HIGH);
@@ -27,6 +29,7 @@ SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6,
     digitalWrite(pin7, HIGH);
     digitalWrite(pin9, HIGH);
     digitalWrite(pin10, HIGH);
+    /***********************************************************/
   
     _pin1 = pin1;
     _pin2 = pin2;
