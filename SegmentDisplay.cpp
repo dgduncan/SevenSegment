@@ -179,8 +179,8 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, LOW);
         digitalWrite(_pin5, HIGH);
-        digitalWrite(_pin6, LOW);
-        digitalWrite(_pin7, LOW);
+        digitalWrite(_pin6, HIGH);
+        digitalWrite(_pin7, HIGH);
         digitalWrite(_pin9, LOW);
         digitalWrite(_pin10, LOW);	
 	}
@@ -194,7 +194,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, LOW);	
+        digitalWrite(_pin10, HIGH);	
 	}
 	
 	if(number == 13)
@@ -211,11 +211,11 @@ void SegmentDisplay::displayHex(int number)
 	
 	if(number == 14)
 	{
-        digitalWrite(_pin1, HIGH);
+        digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, LOW);
-        digitalWrite(_pin6, LOW);
+        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
         digitalWrite(_pin10, LOW);	
@@ -226,36 +226,22 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, HIGH);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, LOW);
+        digitalWrite(_pin5, HIGH);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
         digitalWrite(_pin10, LOW);	
+		
 	}
 }
 
 void SegmentDisplay::testDisplay()
 {
-	displayNumber(0);
-	delay(500);
-	displayNumber(1);
-	delay(500);
-	displayNumber(2);
-	delay(500);
-	displayNumber(3);
-	delay(500);
-	displayNumber(4);
-	delay(500);
-	displayNumber(5);
-	delay(500);
-	displayNumber(6);
-	delay(500);
-	displayNumber(7);
-	delay(500);
-	displayNumber(8);
-	delay(500);
-	displayNumber(9);
-	delay(500);
+	for(int i = 0; i <= 15; i++)
+	{
+		displayHex(i);
+		delay(500);
+	}
 }
 
 
