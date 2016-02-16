@@ -56,7 +56,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, HIGH);
     }
 	
-    if(number == 1)
+    else if(number == 1)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
@@ -68,7 +68,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, HIGH);
     }
   
-    if(number == 2)
+    else if(number == 2)
     {
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
@@ -80,7 +80,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 3)
+    else if(number == 3)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, LOW);
@@ -92,7 +92,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 4)
+    else if(number == 4)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
@@ -104,7 +104,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 5)
+    else if(number == 5)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, LOW);
@@ -116,7 +116,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 6)
+    else if(number == 6)
     {
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
@@ -128,7 +128,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 7)
+    else if(number == 7)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
@@ -140,7 +140,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, HIGH);
     }
   
-    if(number == 8)
+    else if(number == 8)
     {
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
@@ -152,7 +152,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
   
-    if(number == 9)
+    else if(number == 9)
     {
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
@@ -164,7 +164,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);
     }
 	
-    if(number == 10)
+    else if(number == 10)
     {
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, HIGH);
@@ -176,7 +176,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin10, LOW);	
     }
 	
-    if(number == 11)
+    else if(number == 11)
     {
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
@@ -188,7 +188,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin10, LOW);	
 	}
 	
-	if(number == 12)
+	else if(number == 12)
 	{
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
@@ -200,7 +200,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin10, HIGH);	
 	}
 	
-	if(number == 13)
+	else if(number == 13)
 	{
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
@@ -212,7 +212,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin10, LOW);	
 	}
 	
-	if(number == 14)
+	else if(number == 14)
 	{
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
@@ -224,7 +224,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin10, LOW);	
 	}
 	
-	if(number == 15)
+	else if(number == 15)
 	{
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, HIGH);
@@ -236,6 +236,32 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin10, LOW);	
 		
 	}
+    
+    else
+    {
+        digitalWrite(_pin1, HIGH);
+        digitalWrite(_pin2, LOW);
+        digitalWrite(_pin4, HIGH);
+        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin6, HIGH);
+        digitalWrite(_pin7, LOW);
+        digitalWrite(_pin9, HIGH);
+        digitalWrite(_pin10, LOW);
+        
+    }
+}
+
+void SegmentDisplay::displayDecimalPoint()
+{
+    digitalWrite(_pin1, HIGH);
+    digitalWrite(_pin2, HIGH);
+    digitalWrite(_pin4, HIGH);
+    digitalWrite(_pin5, LOW);
+    digitalWrite(_pin6, HIGH);
+    digitalWrite(_pin7, HIGH);
+    digitalWrite(_pin9, HIGH);
+    digitalWrite(_pin10, HIGH);
+    
 }
 
 void SegmentDisplay::testDisplay()
