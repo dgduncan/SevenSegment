@@ -50,5 +50,5 @@ segmentDisplay.testDisplay();
 
 **Example Wiring**
 
-![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/fritzing_image.png "Example Wiring Diagram")
+![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/extras/fritzing_image.png "Example Wiring Diagram")
 
