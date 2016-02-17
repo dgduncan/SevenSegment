@@ -29,7 +29,6 @@ SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6,
     digitalWrite(pin7, HIGH);
     digitalWrite(pin9, HIGH);
     digitalWrite(pin10, HIGH);
-    /***********************************************************/
   
     _pin1 = pin1;
     _pin2 = pin2;
@@ -48,7 +47,7 @@ void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
     
     if(decimalPointFlag)
     {
-        decimalFlag = LOW
+        decimalFlag = LOW;
         
     }
     if(number == 0)
@@ -275,7 +274,7 @@ void SegmentDisplay::testDisplay()
 {
 	for(int i = 0; i <= 15; i++)
 	{
-		displayHex(i);
+		displayHex(i, false);
 		delay(500);
 	}
 }
