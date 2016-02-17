@@ -29,7 +29,7 @@ SegmentDisplay segmentDisplay(2, 3, 4, 5, 6, 7, 8, 9);
 
 **How to display a hex letter**
 ```C
-/*Display any given number 0 to 15
+/*Display any given hex number 0 to 15
  *2 and C in this example
  */
 segmentDisplay.displayHex(2);
@@ -43,8 +43,6 @@ segmentDisplay.testDisplay();
 ```
 
 **Example Wiring**
-![Alt text](http://s28.postimg.org/3ykbyq331/IMG_0550.jpg "Example Wiring")
-
 
 ![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/fritzing_image.png "Example Wiring Diagram")
 
