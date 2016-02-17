@@ -42,14 +42,21 @@ SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6,
   
 }
 
-void SegmentDisplay::displayHex(int number)
+void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
 {
+    int decimalFlag = HIGH;
+    
+    if(decimalPointFlag)
+    {
+        decimalFlag = LOW
+        
+    }
     if(number == 0)
     {
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, LOW);
@@ -61,7 +68,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, HIGH);
       digitalWrite(_pin9, HIGH);
@@ -73,7 +80,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, HIGH);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, HIGH);
@@ -85,7 +92,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, HIGH);
@@ -97,7 +104,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, HIGH);
       digitalWrite(_pin9, LOW);
@@ -109,7 +116,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, HIGH);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, LOW);
@@ -121,7 +128,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, HIGH);
       digitalWrite(_pin7, HIGH);
       digitalWrite(_pin9, LOW);
@@ -133,7 +140,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, HIGH);
@@ -145,7 +152,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, LOW);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, LOW);
@@ -157,7 +164,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, HIGH);
       digitalWrite(_pin2, HIGH);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, LOW);
@@ -169,7 +176,7 @@ void SegmentDisplay::displayHex(int number)
       digitalWrite(_pin1, LOW);
       digitalWrite(_pin2, HIGH);
       digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, HIGH);
+      digitalWrite(_pin5, decimalFlag);
       digitalWrite(_pin6, LOW);
       digitalWrite(_pin7, LOW);
       digitalWrite(_pin9, LOW);
@@ -181,7 +188,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, LOW);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, HIGH);
         digitalWrite(_pin9, LOW);
@@ -193,7 +200,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
@@ -205,7 +212,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, LOW);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, LOW);
         digitalWrite(_pin7, HIGH);
         digitalWrite(_pin9, HIGH);
@@ -217,7 +224,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
@@ -229,7 +236,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, HIGH);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, LOW);
@@ -242,7 +249,7 @@ void SegmentDisplay::displayHex(int number)
         digitalWrite(_pin1, HIGH);
         digitalWrite(_pin2, LOW);
         digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, HIGH);
+        digitalWrite(_pin5, decimalFlag);
         digitalWrite(_pin6, HIGH);
         digitalWrite(_pin7, LOW);
         digitalWrite(_pin9, HIGH);

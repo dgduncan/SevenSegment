@@ -27,18 +27,24 @@ This is the correct pinout diagram of the YSD-160AR4B-8.
 SegmentDisplay segmentDisplay(2, 3, 4, 5, 6, 7, 8, 9);
 ```
 
-**How to display a hex letter**
+**How to display a hex letter with/without decimal point**
 ```C
 /*Display any given hex number 0 to 15
- *2 and C in this example
+ *2 with no decimal and C with decimal point in this example
  */
-segmentDisplay.displayHex(2);
-segmentDisplay.displayHex(12);
+segmentDisplay.displayHex(2, false);
+segmentDisplay.displayHex(12, true);
+```
+
+**Display only the decimal point**
+```C
+/*Display only the decimal point*/
+segmentDisplay.displayDecimalPoint();
 ```
 
 **How to test the display and test display wiring**
 ```C
-/*Test the given display and display wiring by rotating through numbers 0 - 9*/
+/*Test the given display and display wiring by rotating through numbers 0 - F*/
 segmentDisplay.testDisplay();
 ```
 
