@@ -62,7 +62,8 @@ Example Wiring
 
 ![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/extras/fritzing_image.png "Example Wiring Diagram")
 
-**LICENSE**
+LICENSE
+=====
 
 ```
 The MIT License (MIT)
