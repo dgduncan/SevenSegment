@@ -62,6 +62,11 @@ Example Wiring
 
 ![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/extras/fritzing_image.png "Example Wiring Diagram")
 
+TODO
+=====
+
+1. Include examples for ease of use
+
 LICENSE
 =====
 
