@@ -9,27 +9,10 @@
 #include "Arduino.h"
 #include "SegmentDisplay.h"
 
+int pins[8];
+
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10)
 {
-    pinMode(pin1, OUTPUT);
-    pinMode(pin2, OUTPUT);
-    pinMode(pin4, OUTPUT);
-    pinMode(pin5, OUTPUT);
-    pinMode(pin6, OUTPUT);
-    pinMode(pin7, OUTPUT);
-    pinMode(pin9, OUTPUT);
-    pinMode(pin10, OUTPUT);
-    
-	/*Make sure all of the LEDs are turned off for common anode*/
-    digitalWrite(pin1, HIGH);
-    digitalWrite(pin2, HIGH);
-    digitalWrite(pin4, HIGH);
-    digitalWrite(pin5, HIGH);
-    digitalWrite(pin6, HIGH);
-    digitalWrite(pin7, HIGH);
-    digitalWrite(pin9, HIGH);
-    digitalWrite(pin10, HIGH);
-  
     _pin1 = pin1;
     _pin2 = pin2;
     _pin4 = pin4;
@@ -38,221 +21,71 @@ SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6,
     _pin7 = pin7;
     _pin9 = pin9;
     _pin10 = pin10;
+    
+    pins[0] = _pin1;
+    pins[1] = _pin2;
+    pins[2] = _pin4;
+    pins[3] = _pin5;
+    pins[4] = _pin6;
+    pins[5] = _pin7;
+    pins[6] = _pin9;
+    pins[7] = _pin10;
+
+    
+    for(int i = 0; i < 8; i++)
+    {
+        pinMode(pins[i], OUTPUT);
+        digitalWrite(pins[i], HIGH);
+    }
   
 }
 
 void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
 {
-    int decimalFlag = HIGH;
     
-    if(decimalPointFlag)
+    byte numbersToDisplay[] =
     {
-        decimalFlag = LOW;
+        B10001000,  //  0
+        B11101011,  //  1
+        B01001100,  //  2
+        B01001001,  //  3
+        B00101011,  //  4
+        B00011001,  //  5
+        B00011000,  //  6
+        B11001011,  //  7
+        B00001000,  //  8
+        B00001011,  //  9
+        B00001010,  //  A
+        B00111000,  //  B
+        B10011100,  //  C
+        B01101000,  //  D
+        B00011100,  //  E
+        B00011110,  //  F
+        B01011101  //  Error
         
-    }
-    if(number == 0)
-    {
-      digitalWrite(_pin1, LOW);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, HIGH);
-    }
-	
-    else if(number == 1)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, HIGH);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, HIGH);
-      digitalWrite(_pin9, HIGH);
-      digitalWrite(_pin10, HIGH);
-    }
-  
-    else if(number == 2)
-    {
-      digitalWrite(_pin1, LOW);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, HIGH);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, HIGH);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 3)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, HIGH);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 4)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, HIGH);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, HIGH);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 5)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, HIGH);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 6)
-    {
-      digitalWrite(_pin1, LOW);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, HIGH);
-      digitalWrite(_pin7, HIGH);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 7)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, HIGH);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, HIGH);
-      digitalWrite(_pin10, HIGH);
-    }
-  
-    else if(number == 8)
-    {
-      digitalWrite(_pin1, LOW);
-      digitalWrite(_pin2, LOW);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);
-    }
-  
-    else if(number == 9)
-    {
-      digitalWrite(_pin1, HIGH);
-      digitalWrite(_pin2, HIGH);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);
-    }
-	
-    else if(number == 10)
-    {
-      digitalWrite(_pin1, LOW);
-      digitalWrite(_pin2, HIGH);
-      digitalWrite(_pin4, LOW);
-      digitalWrite(_pin5, decimalFlag);
-      digitalWrite(_pin6, LOW);
-      digitalWrite(_pin7, LOW);
-      digitalWrite(_pin9, LOW);
-      digitalWrite(_pin10, LOW);	
-    }
-	
-    else if(number == 11)
-    {
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, LOW);
-        digitalWrite(_pin4, LOW);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, HIGH);
-        digitalWrite(_pin7, HIGH);
-        digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, LOW);	
-	}
-	
-	else if(number == 12)
-	{
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, LOW);
-        digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, HIGH);
-        digitalWrite(_pin7, LOW);
-        digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, HIGH);	
-	}
-	
-	else if(number == 13)
-	{
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, LOW);
-        digitalWrite(_pin4, LOW);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, LOW);
-        digitalWrite(_pin7, HIGH);
-        digitalWrite(_pin9, HIGH);
-        digitalWrite(_pin10, LOW);	
-	}
-	
-	else if(number == 14)
-	{
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, LOW);
-        digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, HIGH);
-        digitalWrite(_pin7, LOW);
-        digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, LOW);	
-	}
-	
-	else if(number == 15)
-	{
-        digitalWrite(_pin1, LOW);
-        digitalWrite(_pin2, HIGH);
-        digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, HIGH);
-        digitalWrite(_pin7, LOW);
-        digitalWrite(_pin9, LOW);
-        digitalWrite(_pin10, LOW);	
-		
-	}
+    };
     
-    else
+    
+    boolean bitToWrite;
+    
+    for(int segment = 0; segment < 8; segment++)
     {
-        digitalWrite(_pin1, HIGH);
-        digitalWrite(_pin2, LOW);
-        digitalWrite(_pin4, HIGH);
-        digitalWrite(_pin5, decimalFlag);
-        digitalWrite(_pin6, HIGH);
-        digitalWrite(_pin7, LOW);
-        digitalWrite(_pin9, HIGH);
-        digitalWrite(_pin10, LOW);
+        if(number < 0 || number > 15)
+        {
+            bitToWrite = bitRead(numbersToDisplay[16], segment);
+        }
+        
+        else if(segment == 3 && decimalPointFlag)
+        {
+            bitToWrite = 0;
+        }
+        
+        else
+        {
+            bitToWrite = bitRead(numbersToDisplay[number], segment);
+        }
+        
+        digitalWrite(pins[segment], bitToWrite);
         
     }
 }
