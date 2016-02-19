@@ -1,17 +1,17 @@
 # arduino_7_segment_display_library
 This library was written originally to be used with 7-Segment-Display YSD-160AR4B-8
 
-**Installing this Library**
+Installing this Library
+=====
 
-Zip Download
-======
-1. Download this library by clicking download zip at the top right of this repository.
+1. Download this library by clicking download zip at the top right of this repository or cloning the repository to your computer.
 
 2. In the arduino IDE: Sketch -> Include Library -> Add .ZIP library : and go to where the zip file you downloaded is located. Done!
 
 3. When you want to use this library, just include the library @ Sketch -> Include Library in the Arduino IDE and you are good to go!
 
-**How to use this library:**
+How to use this library
+=====
 
 This is the correct pinout diagram of the YSD-160AR4B-8.
 
@@ -57,7 +57,8 @@ segmentDisplay.displayDecimalPoint();
 segmentDisplay.testDisplay();
 ```
 
-**Example Wiring**
+Example Wiring
+=====
 
 ![Alt text](https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/extras/fritzing_image.png "Example Wiring Diagram")
 
