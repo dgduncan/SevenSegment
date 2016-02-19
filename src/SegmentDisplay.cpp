@@ -92,14 +92,17 @@ void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
 
 void SegmentDisplay::displayDecimalPoint()
 {
-    digitalWrite(_pin1, HIGH);
-    digitalWrite(_pin2, HIGH);
-    digitalWrite(_pin4, HIGH);
-    digitalWrite(_pin5, LOW);
-    digitalWrite(_pin6, HIGH);
-    digitalWrite(_pin7, HIGH);
-    digitalWrite(_pin9, HIGH);
-    digitalWrite(_pin10, HIGH);
+    for(int i = 0; i < 8; i++)
+    {
+        if(i == 3)
+        {
+            digitalWrite(pins[i], 0);
+        }
+        else
+        {
+            digitalWrite(pins[i], 1);
+        }
+    }
     
 }
 
