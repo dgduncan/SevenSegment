@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sevensegment by dgduncan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Sevensegment</h1>
+      <h2 class="project-tagline">Arduino library to control common-anode 7-segment display</h2>
+      <a href="https://github.com/dgduncan/SevenSegment" class="btn">View on GitHub</a>
+      <a href="https://github.com/dgduncan/SevenSegment/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/dgduncan/SevenSegment/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="arduino_7_segment_display_library" class="anchor" href="#arduino_7_segment_display_library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>arduino_7_segment_display_library</h1>
+
+<p>This library was written originally to be used with 7-Segment-Display YSD-160AR4B-8</p>
+
+<h1>
+<a id="installing-this-library" class="anchor" href="#installing-this-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing this Library</h1>
+
+<ol>
+<li><p>Download this library by clicking download zip at the top right of this repository or cloning the repository to your computer.</p></li>
+<li><p>In the arduino IDE: Sketch -&gt; Include Library -&gt; Add .ZIP library : and go to where the zip file you downloaded is located. Done!</p></li>
+<li><p>When you want to use this library, just include the library @ Sketch -&gt; Include Library in the Arduino IDE and you are good to go!</p></li>
+</ol>
+
+<h1>
+<a id="how-to-use-this-library" class="anchor" href="#how-to-use-this-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use this library</h1>
+
+<p>This is the correct pinout diagram of the YSD-160AR4B-8.</p>
+
+<pre><code>10, 9, CA, 7, 6
+ ____________
+|            |
+|            |
+|            |
+|            |
+|            |
+|____________|
+1, 2, CA, 4, 5
+</code></pre>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/*</span>
+<span class="pl-c"> *Initialize SevenSegment</span>
+<span class="pl-c"> *Put the number of the digitalPin from the arduino connected to the 7-Segment in order</span>
+<span class="pl-c"> *For example, I use digitalPin 2 connected to pin 1 on the 7-Segment, digitalPin 3 to pin2, 4 to 4</span>
+<span class="pl-c"> *5 to 5, 6 to 6, 7 to 7, 8 to 9, and 9 to 10</span>
+<span class="pl-c"> */</span>
+SegmentDisplay <span class="pl-en">segmentDisplay</span>(<span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>);</pre></div>
+
+<p><strong>How to display a hex letter with/without decimal point</strong></p>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/*Display any given hex number 0 to 15</span>
+<span class="pl-c"> *2 with no decimal and C with decimal point in this example</span>
+<span class="pl-c"> */</span>
+segmentDisplay.displayHex(<span class="pl-c1">2</span>, <span class="pl-c1">false</span>);
+segmentDisplay.displayHex(<span class="pl-c1">12</span>, <span class="pl-c1">true</span>);</pre></div>
+
+<p><strong>Display only the decimal point</strong></p>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/*Display only the decimal point*/</span>
+segmentDisplay.displayDecimalPoint();</pre></div>
+
+<p><strong>How to test the display and test display wiring</strong></p>
+
+<div class="highlight highlight-source-c"><pre><span class="pl-c">/*Test the given display and display wiring by rotating through numbers 0 - F*/</span>
+segmentDisplay.testDisplay();</pre></div>
+
+<h1>
+<a id="example-wiring" class="anchor" href="#example-wiring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Wiring</h1>
+
+<p><img src="https://github.com/dgduncan/arduino_7_segment_display_library/blob/master/extras/fritzing_image.png" alt="Alt text" title="Example Wiring Diagram"></p>
+
+<h1>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h1>
+
+<ol>
+<li>Include examples for ease of use</li>
+</ol>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LICENSE</h1>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2016 Derek Duncan
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/dgduncan/SevenSegment">Sevensegment</a> is maintained by <a href="https://github.com/dgduncan">dgduncan</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
