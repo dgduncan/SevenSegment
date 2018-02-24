@@ -18,6 +18,7 @@ class SegmentDisplay
       void displayDecimalPoint();
       void displayHex(int numberToDisplay, boolean decimalPointFlag);
       void testDisplay();
+	  void displaySaver();
 
     private:
       int _pin1;

@@ -11,8 +11,7 @@
 
 int pins[8];
 
-SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10)
-{
+SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10) {
     _pin1 = pin1;
     _pin2 = pin2;
     _pin4 = pin4;
@@ -114,5 +113,19 @@ void SegmentDisplay::testDisplay()
 		delay(500);
 	}
 }
+
+void SegmentDisplay::displaySaver() {
+	int numbersToDisplay[] = {6, 5, 4, 7, 0, 1, 2, 7};
+	
+	for(int i = 0; i <= 8; i++) {
+		if(i == 0)
+			digitalWrite(pins[7], 1);
+		else
+			digitalWrite(pins[numbersToDisplay[i-1]], 1);
+		digitalWrite(pins[numbersToDisplay[i]], 0);
+		delay(100);
+	}
+}
+	
 
 
