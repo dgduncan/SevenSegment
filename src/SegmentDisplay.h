@@ -21,14 +21,15 @@ class SegmentDisplay
 	  void displaySaver();
 
     private:
-      int _pin1;
+	  int pins[8];
+      /*int _pin1;
       int _pin2;
       int _pin4;
       int _pin5;
       int _pin6;
       int _pin7;
       int _pin9;
-      int _pin10;
+      int _pin10;*/
     
 };
 

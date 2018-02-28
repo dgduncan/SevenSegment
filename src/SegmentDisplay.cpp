@@ -9,41 +9,37 @@
 #include "Arduino.h"
 #include "SegmentDisplay.h"
 
-int pins[8];
+//int pins[8];
 
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10) {
-    _pin1 = pin1;
+    /*_pin1 = pin1;
     _pin2 = pin2;
     _pin4 = pin4;
     _pin5 = pin5;
     _pin6 = pin6;
     _pin7 = pin7;
     _pin9 = pin9;
-    _pin10 = pin10;
+    _pin10 = pin10;*/
     
-    pins[0] = _pin1;
-    pins[1] = _pin2;
-    pins[2] = _pin4;
-    pins[3] = _pin5;
-    pins[4] = _pin6;
-    pins[5] = _pin7;
-    pins[6] = _pin9;
-    pins[7] = _pin10;
+    pins[0] = pin1;
+    pins[1] = pin2;
+    pins[2] = pin4;
+    pins[3] = pin5;
+    pins[4] = pin6;
+    pins[5] = pin7;
+    pins[6] = pin9;
+    pins[7] = pin10;
 
     
-    for(int i = 0; i < 8; i++)
-    {
+    for(int i = 0; i < 8; i++) {
         pinMode(pins[i], OUTPUT);
         digitalWrite(pins[i], HIGH);
     }
-  
 }
 
-void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
-{
+void SegmentDisplay::displayHex(int number, boolean decimalPointFlag) {
     
-    byte numbersToDisplay[] =
-    {
+    byte numbersToDisplay[] = {
         B10001000,  //  0
         B11101011,  //  1
         B01001100,  //  2
@@ -67,20 +63,16 @@ void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
     
     boolean bitToWrite;
     
-    for(int segment = 0; segment < 8; segment++)
-    {
-        if(number < 0 || number > 15)
-        {
+    for(int segment = 0; segment < 8; segment++) {
+        if(number < 0 || number > 15) {
             bitToWrite = bitRead(numbersToDisplay[16], segment);
         }
         
-        else if(segment == 3 && decimalPointFlag)
-        {
+        else if(segment == 3 && decimalPointFlag) {
             bitToWrite = 0;
         }
         
-        else
-        {
+        else {
             bitToWrite = bitRead(numbersToDisplay[number], segment);
         }
         
@@ -89,26 +81,19 @@ void SegmentDisplay::displayHex(int number, boolean decimalPointFlag)
     }
 }
 
-void SegmentDisplay::displayDecimalPoint()
-{
-    for(int i = 0; i < 8; i++)
-    {
-        if(i == 3)
-        {
+void SegmentDisplay::displayDecimalPoint() {
+    for(int i = 0; i < 8; i++) {
+        if(i == 3) {
             digitalWrite(pins[i], 0);
         }
-        else
-        {
+        else {
             digitalWrite(pins[i], 1);
         }
     }
-    
 }
 
-void SegmentDisplay::testDisplay()
-{
-	for(int i = 0; i <= 15; i++)
-	{
+void SegmentDisplay::testDisplay() {
+	for(int i = 0; i <= 15; i++) {
 		displayHex(i, false);
 		delay(500);
 	}
@@ -123,9 +108,6 @@ void SegmentDisplay::displaySaver() {
 		else
 			digitalWrite(pins[numbersToDisplay[i-1]], 1);
 		digitalWrite(pins[numbersToDisplay[i]], 0);
-		delay(100);
+		delay(500);
 	}
 }
-	
-
-
