@@ -1,7 +1,7 @@
 # arduino_7_segment_display_library
 This library was written originally to be used with 7-Segment-Display YSD-160AR4B-8
 
-[![Demo Doccou alpha](https://media.giphy.com/media/5oJgVjAWZ303PLd0NC/giphy.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
+[![Demo](https://media.giphy.com/media/5oJgVjAWZ303PLd0NC/giphy.gif)](https://giphy.com/gifs/5oJgVjAWZ303PLd0NC/html5)
 
 Installing this Library
 =====
