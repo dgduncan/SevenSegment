@@ -99,7 +99,8 @@ void SegmentDisplay::testDisplay() {
 	}
 }
 
-void SegmentDisplay::displaySaver() {
+// TODO : Figure out a better way to do this.
+/*void SegmentDisplay::displaySaver() {
 	int numbersToDisplay[] = {6, 5, 4, 7, 0, 1, 2, 7};
 	
 	for(int i = 0; i <= 8; i++) {
@@ -110,4 +111,4 @@ void SegmentDisplay::displaySaver() {
 		digitalWrite(pins[numbersToDisplay[i]], 0);
 		delay(500);
 	}
-}
+}*/
