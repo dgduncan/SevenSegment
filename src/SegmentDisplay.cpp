@@ -9,17 +9,7 @@
 #include "Arduino.h"
 #include "SegmentDisplay.h"
 
-//int pins[8];
-
 SegmentDisplay::SegmentDisplay(int pin1, int pin2, int pin4, int pin5, int pin6, int pin7, int pin9, int pin10) {
-    /*_pin1 = pin1;
-    _pin2 = pin2;
-    _pin4 = pin4;
-    _pin5 = pin5;
-    _pin6 = pin6;
-    _pin7 = pin7;
-    _pin9 = pin9;
-    _pin10 = pin10;*/
     
     pins[0] = pin1;
     pins[1] = pin2;
@@ -98,17 +88,3 @@ void SegmentDisplay::testDisplay() {
 		delay(500);
 	}
 }
-
-// TODO : Figure out a better way to do this.
-/*void SegmentDisplay::displaySaver() {
-	int numbersToDisplay[] = {6, 5, 4, 7, 0, 1, 2, 7};
-	
-	for(int i = 0; i <= 8; i++) {
-		if(i == 0)
-			digitalWrite(pins[7], 1);
-		else
-			digitalWrite(pins[numbersToDisplay[i-1]], 1);
-		digitalWrite(pins[numbersToDisplay[i]], 0);
-		delay(500);
-	}
-}*/
